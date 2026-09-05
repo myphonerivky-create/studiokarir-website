@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioKarir — Solusi Karir & Berkas Kerja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#2563EB',
+                        'brand-dark': '#1D4ED8',
+                        'brand-light': '#EFF6FF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-grid {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-brand text-white rounded-xl flex items-center justify-center font-bold shadow-md shadow-blue-500/20">
+                    <i class="fas fa-briefcase text-lg"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight text-slate-900">Studio<span class="text-brand">Karir</span></span>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#layanan" class="hover:text-brand transition">Layanan</a>
+                <a href="#hasil-kerja" class="hover:text-brand transition">Hasil Karya</a>
+                <a href="#faq" class="hover:text-brand transition">FAQ</a>
+            </nav>
+
+            <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20ingin%20konsultasi%20gratis" target="_blank" class="bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/25 transition flex items-center gap-2">
+                Konsultasi Gratis <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO & LAYANAN UNGGULAN -->
+    <main class="bg-grid min-h-screen py-16 px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div id="layanan" class="space-y-4 pt-4">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-brand block">Layanan Unggulan</span>
+                <h1 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight max-w-2xl">
+                    Layanan Terbaik Untuk Kelancaran Karirmu
+                </h1>
+                <p class="text-slate-500 text-base md:text-lg max-w-2xl font-normal">
+                    Semua yang kamu butuhkan untuk tampil lebih percaya diri dan profesional di hadapan rekruter.
+                </p>
+            </div>
+
+            <!-- CARDS GRID DENGAN GAMBAR -->
+            <div id="hasil-kerja" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1: CV ATS -->
+                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-full h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
+                            <img src="cv.png" alt="CV ATS Friendly" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">CV ATS-Friendly</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Dioptimalkan khusus agar lolos pemindaian software ATS & menarik minat HRD dalam 6 detik pertama.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20tertarik%20layanan%20CV%20ATS" target="_blank" class="text-brand font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all pt-2">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Portofolio -->
+                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-full h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
+                            <img src="portofolio.png" alt="Portofolio Visual" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Portofolio Visual</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Tampilkan rekam jejak & hasil karya terbaikmu dalam layout estetik, rapi, dan komunikatif.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20tertarik%20layanan%20Portofolio" target="_blank" class="text-brand font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all pt-2">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Optimasi LinkedIn -->
+                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-full h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
+                            <img src="linkedin.png" alt="Optimasi LinkedIn" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Optimasi LinkedIn</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Ubah profil LinkedIn milikmu menjadi magnet rekruter dengan headline, summary, & keywords terpilih.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20tertarik%20Optimasi%20LinkedIn" target="_blank" class="text-brand font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all pt-2">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4: Testimoni / Website -->
+                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-full h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
+                            <img src="testimoni.png" alt="Kepuasan Klien" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Kepuasan Klien</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Hasil pengerjaan berkualitas tinggi yang dirancang khusus untuk meningkatkan peluang kariermu.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20mau%20konsultasi" target="_blank" class="text-brand font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all pt-2">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
