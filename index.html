@@ -446,6 +446,124 @@
       </div>
     </section>
     </main>
+<!-- SCRIPT INTEGRASI GOOGLE SHEETS FOR REVIEWS -->
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-6qmYn2AtpuAWdnt7YIVb_jeM77DYuo_G4Er0pzCzeVyk3xfw4PytLpSPUbl5OKwu/exec";
 
+  let selectedRating = 5;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const starIcons = document.querySelectorAll("#penilaian .fa-star");
+    const reviewForm = document.querySelector("#penilaian form");
+    const reviewsContainer = document.querySelector("#penilaian .grid");
+
+    // 1. Logika Klik Bintang (Rating)
+    if (starIcons.length) {
+      starIcons.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          selectedRating = index + 1;
+          starIcons.forEach((s, i) => {
+            if (i <= index) {
+              s.classList.add("text-amber-400");
+              s.classList.remove("text-slate-300");
+            } else {
+              s.classList.remove("text-amber-400");
+              s.classList.add("text-slate-300");
+            }
+          });
+        });
+      });
+    }
+
+    // 2. Load Ulasan dari Google Sheets secara Real-time
+    async function fetchReviews() {
+      try {
+        const response = await fetch(SCRIPT_URL);
+        const data = await response.json();
+        
+        if (data && data.length > 0) {
+          reviewsContainer.innerHTML = data.map(row => {
+            const nama = row[0] || "Pelanggan";
+            const rating = parseInt(row[1]) || 5;
+            const ulasan = row[2] || "";
+            const tanggal = row[3] || "Terbaru";
+            const inisial = nama.charAt(0).toUpperCase();
+
+            const starsHtml = Array.from({ length: 5 }, (_, i) => 
+              `<i class="fas fa-star ${i < rating ? 'text-amber-400' : 'text-slate-300'}"></i>`
+            ).join('');
+
+            return `
+              <div class="bg-slate-50/70 p-6 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                <div>
+                  <div class="flex items-center gap-1 text-xs mb-3">
+                    ${starsHtml}
+                  </div>
+                  <p class="text-slate-600 text-xs leading-relaxed italic mb-6">"${ulasan}"</p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+                  <div class="w-9 h-9 rounded-full bg-blue-100 text-brand font-bold flex items-center justify-center text-xs">
+                    ${inisial}
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">${nama}</h4>
+                    <p class="text-[10px] text-slate-400">${tanggal}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+      } catch (err) {
+        console.error("Gagal memuat ulasan:", err);
+      }
+    }
+
+    // 3. Tangani Pengiriman Form Ulasan
+    if (reviewForm) {
+      reviewForm.onsubmit = null;
+      reviewForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const submitBtn = reviewForm.querySelector("button[type='submit']");
+        const namaInput = reviewForm.querySelector("input[type='text']");
+        const ulasanInput = reviewForm.querySelector("textarea");
+
+        const payload = {
+          nama: namaInput.value,
+          rating: selectedRating,
+          ulasan: ulasanInput.value
+        };
+
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = "Mengirim Ulasan...";
+        submitBtn.disabled = true;
+
+        try {
+          await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          alert("Terima kasih! Ulasan kamu berhasil dikirim.");
+          reviewForm.reset();
+          
+          setTimeout(fetchReviews, 1500);
+
+        } catch (error) {
+          alert("Gagal mengirim ulasan, silakan coba lagi.");
+          console.error(error);
+        } finally {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    fetchReviews();
+  });
+</script>
 </body>
 </html>
