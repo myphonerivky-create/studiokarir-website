@@ -273,32 +273,116 @@
     </p>
 
     <!-- Form Ulasan -->
-    <form class="mt-8 bg-slate-50/70 p-8 rounded-3xl border border-slate-200/80 space-y-5 text-left shadow-sm" onsubmit="event.preventDefault(); alert('Terima kasih atas penilaian dan masukan yang kamu berikan!');">
-      <div>
-        <label class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap</label>
-        <input type="text" required placeholder="Masukkan nama kamu" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand/50 bg-white">
-      </div>
+    <!-- SECTION: UULASAN & FORM PENILAIAN -->
+<section id="penilaian" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="text-brand font-bold text-xs uppercase tracking-wider">Ulasan & Feedback</span>
+    <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Apa Kata Mereka Tentang StudioKarir?</h2>
+    <p class="text-slate-500 mt-2 text-sm max-w-lg mx-auto mb-12">
+      Dengarkan pengalaman nyata dari para jobseeker dan profesional yang telah melesatkan karirnya bersama kami.
+    </p>
 
-      <div>
-        <label class="block text-xs font-bold text-slate-700 mb-1.5">Pilih Penilaian (Bintang)</label>
-        <div class="flex items-center gap-2 text-amber-400 text-2xl">
-          <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
-          <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
-          <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
-          <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
-          <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
+    <!-- GRID KARTU TESTIMONI -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16">
+      
+      <!-- Kartu 1 -->
+      <div class="bg-slate-50/70 p-6 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed italic mb-6">
+            "CV ATS-nya beneran lolos screening! Seminggu setelah sebar CV baru dari StudioKarir langsung dipanggil interview di perusahaan impian."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+          <div class="w-9 h-9 rounded-full bg-blue-100 text-brand font-bold flex items-center justify-center text-xs">
+            R
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900">Rian Pratama</h4>
+            <p class="text-[10px] text-slate-400">Fresh Graduate • Paket Starter</p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <label class="block text-xs font-bold text-slate-700 mb-1.5">Ulasan / Masukan Kamu</label>
-        <textarea rows="4" required placeholder="Tuliskan pengalaman atau kesan kamu selama menggunakan layanan StudioKarir..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand/50 bg-white"></textarea>
+      <!-- Kartu 2 -->
+      <div class="bg-slate-50/70 p-6 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed italic mb-6">
+            "Portofolio visualnya keren banget dan rapi. Klien eksternal saya makin percaya dan pengerjaannya cuma butuh waktu 1 hari."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+          <div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-xs">
+            S
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900">Siti Nurhaliza</h4>
+            <p class="text-[10px] text-slate-400">UI/UX Designer • Paket Portofolio</p>
+          </div>
+        </div>
       </div>
 
-      <button type="submit" class="w-full py-3.5 bg-brand text-white font-bold text-xs rounded-full hover:bg-blue-600 transition shadow-md">
-        Kirim Penilaian
-      </button>
-    </form>
+      <!-- Kartu 3 -->
+      <div class="bg-slate-50/70 p-6 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed italic mb-6">
+            "Paket Ultimate worth it banget! Dapat CV, PDF Portofolio, plus website personal aktif. Adminnya super ramah dan komunikatif."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+          <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-600 font-bold flex items-center justify-center text-xs">
+            D
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900">Dicky Kurniawan</h4>
+            <p class="text-[10px] text-slate-400">Software Engineer • Paket Ultimate</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FORM INPUT PENILAIAN -->
+    <div class="max-w-2xl mx-auto pt-8 border-t border-slate-100">
+      <h3 class="text-xl font-bold text-slate-900 mb-1">Punya Pengalaman Bersama Kami?</h3>
+      <p class="text-slate-500 text-xs mb-6">Bagikan ulasanmu untuk membantu calon klien lainnya.</p>
+      
+      <form class="bg-slate-50/70 p-8 rounded-3xl border border-slate-200/80 space-y-5 text-left shadow-sm" onsubmit="event.preventDefault(); alert('Terima kasih atas ulasan yang kamu berikan!');">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap</label>
+          <input type="text" required placeholder="Masukkan nama kamu" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand/50 bg-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Pilih Penilaian (Bintang)</label>
+          <div class="flex items-center gap-2 text-amber-400 text-2xl">
+            <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
+            <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
+            <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
+            <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
+            <i class="fas fa-star cursor-pointer hover:scale-110 transition"></i>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Ulasan / Masukan Kamu</label>
+          <textarea rows="4" required placeholder="Tuliskan pengalaman atau kesan kamu selama menggunakan layanan StudioKarir..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand/50 bg-white"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-brand text-white font-bold text-xs rounded-full hover:bg-blue-600 transition shadow-md">
+          Kirim Penilaian
+        </button>
+      </form>
+    </div>
+
   </div>
 </section>
     <section id="faq" class="py-20 bg-slate-50/50">
