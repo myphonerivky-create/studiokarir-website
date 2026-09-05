@@ -448,14 +448,14 @@
     </main>
 <!-- SCRIPT INTEGRASI GOOGLE SHEETS FOR REVIEWS -->
 <script>
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-6qmYn2AtpuAWdnt7YIVb_jeM77DYuo_G4Er0pzCzeVyk3xfw4PytLpSPUbl5OKwu/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzdOMWCh5WT6t6rylyzRg5uegKAQ2vb_mUbw8KTVbKnzAOlSoZdIGgia8gfmzvbDaEV/exec";
 
   let selectedRating = 5;
 
   document.addEventListener("DOMContentLoaded", function () {
     const starIcons = document.querySelectorAll("#penilaian .fa-star");
     const reviewForm = document.querySelector("#penilaian form");
-    const reviewsContainer = document.querySelector("#penilaian .grid");
+    const reviewsContainer = document.querySelector("#penilaian .grid") || document.querySelector("main .grid");
 
     // 1. Logika Klik Bintang (Rating)
     if (starIcons.length) {
