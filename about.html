@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami – StudioKarir</title>
+  <meta name="description" content="Mengenal lebih dekat StudioKarir, penyedia layanan optimasi berkas karir dan personal branding terpercaya." />
+  
+  <!-- Tailwind CSS & Font Awesome Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2563eb',
+              dark: '#0f172a',
+              light: '#f8fafc'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-light text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Navigasi Utama -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-md">
+          SK
+        </div>
+        <span class="font-bold text-xl text-slate-900 tracking-tight">StudioKarir</span>
+      </a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-brand-blue transition">Home</a>
+        <a href="about.html" class="text-brand-blue font-bold">Tentang Kami</a>
+        <a href="index.html#layanan" class="hover:text-brand-blue transition">Layanan</a>
+        <a href="index.html#faq" class="hover:text-brand-blue transition">FAQ</a>
+      </nav>
+
+      <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20StudioKarir,%20saya%20ingin%20konsultasi" target="_blank" class="bg-brand-blue hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition text-sm flex items-center space-x-2">
+        <span>Konsultasi Gratis</span>
+        <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Content Halaman Tentang Kami -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
+    
+    <!-- Hero Banner Profil -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-block px-3 py-1 bg-blue-100 text-brand-blue text-xs font-semibold rounded-full tracking-wide uppercase mb-3">Tentang StudioKarir</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+        Mendampingi Langkah Karir Impianmu
+      </h1>
+      <p class="text-slate-600 text-base sm:text-lg mt-4 leading-relaxed">
+        StudioKarir hadir sebagai solusi profesional untuk membantu para pencari kerja dan profesional menyusun berkas lamaran terbaik yang siap dilirik oleh HRD.
+      </p>
+    </div>
+
+    <!-- Deskripsi Bisnis & Misi -->
+    <div class="grid md:grid-cols-2 gap-8 items-stretch mb-16">
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Siapa Kami?</h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
+          Kami memahami bahwa persaingan dunia kerja saat ini membutuhkan tampilan profil yang menonjol. Banyak talenta hebat yang gagal di tahap awal hanya karena format CV atau portofolio yang kurang optimal.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Oleh karena itu, StudioKarir hadir menawarkan layanan pengerjaan berkas karir profesional berstandar ATS (*Applicant Tracking System*) dengan sentuhan visual yang modern.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-sm flex flex-col justify-center">
+        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest block mb-3">Misi Utama Kami</span>
+        <blockquote class="text-xl font-medium leading-relaxed mb-6">
+          "Mendampingi langkah awal pertumbuhan karirmu melalui standar berkas lamaran kerja yang rapi, modern, dan tepercaya."
+        </blockquote>
+        <div class="flex items-center space-x-3 text-slate-400 text-sm">
+          <i class="fas fa-check-circle text-brand-blue"></i>
+          <span>Standar Internasional & ATS-Friendly</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Galeri Foto Dokumentasi & Suasana -->
+    <section class="mt-8">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900">Suasana & Aktivitas Studio</h2>
+        <p class="text-slate-600 text-sm mt-1">Dokumentasi pengerjaan dan ruang kerja kami dalam merancang dokumen karirmu.</p>
+      </div>
+      
+      <!-- Grid Gambar -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+        <!-- Foto 1 -->
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm group">
+          <img 
+            src="assets/studio-1.jpg" 
+            alt="Ruang Kerja StudioKarir" 
+            class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+          />
+          <div class="p-4">
+            <p class="text-xs font-semibold text-slate-700">Area Diskusi & Konsultasi</p>
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm group">
+          <img 
+            src="assets/studio-2.jpg" 
+            alt="Proses Review Berkas" 
+            class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+          />
+          <div class="p-4">
+            <p class="text-xs font-semibold text-slate-700">Proses Review & Layouting</p>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm group">
+          <img 
+            src="assets/studio-3.jpg" 
+            alt="Dokumentasi Portofolio Klien" 
+            class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+          />
+          <div class="p-4">
+            <p class="text-xs font-semibold text-slate-700">Hasil Akhir Dokumen Klien</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 bg-brand-blue text-white rounded-lg flex items-center justify-center font-bold text-sm">
+          SK
+        </div>
+        <span class="font-bold text-lg">StudioKarir</span>
+      </div>
+      <p class="text-slate-400 text-sm">© 2026 StudioKarir. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
