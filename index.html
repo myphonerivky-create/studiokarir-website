@@ -568,12 +568,34 @@
   async function loadSanityContent() {
     try {
       const services = await client.fetch('*[_type == "service"]');
-      const articles = await client.fetch('*[_type == "article"]');
       console.log("Data Layanan dari Sanity:", services);
-      console.log("Data Artikel dari Sanity:", articles);
+
+      renderServices(services);
     } catch (error) {
       console.error("Gagal memuat Sanity:", error);
     }
+  }
+
+  function renderServices(services) {
+    const container = document.getElementById('services-container');
+    if (!container) return;
+
+    container.innerHTML = services.map(item => `
+      <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <div class="space-y-3">
+          ${item.imageUrl ? `
+            <div class="w-full h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
+              <img src="${item.imageUrl}" alt="${item.title || 'Layanan'}" class="w-full h-full object-cover">
+            </div>
+          ` : ''}
+          <h3 class="text-xl font-bold text-slate-900">${item.title || 'Layanan'}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">${item.description || ''}</p>
+        </div>
+        <a href="${item.link || 'https://wa.me/6285813567736'}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-between font-semibold text-sm text-slate-800 hover:text-brand transition">
+          Pesan Sekarang <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    `).join('');
   }
 
   loadSanityContent();
