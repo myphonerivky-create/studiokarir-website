@@ -599,7 +599,10 @@ function renderServices(services) {
         <p class="text-slate-500 text-sm leading-relaxed">${item.description || ''}</p>
       </div>
       <a href="${item.link || 'https://wa.me/6285813567736'}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-between font-semibold text-sm text-slate-800 hover:text-blue-600 transition">
-        Pesan Sekarang <i class="fas fa-arrow-right text-xs"></i>
+       <span>Pesan Sekarang</span>
+<svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+</svg>
       </a>
     </div>
   `).join('');
