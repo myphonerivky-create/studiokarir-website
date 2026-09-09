@@ -618,5 +618,28 @@
     fetchReviews();
   });
 </script>
+    <!-- Sanity Client CDN & Fetch Script -->
+<script src="https://cdn.jsdelivr.net/npm/@sanity/client@6.15.0/dist/index.umd.js"></script>
+<script>
+  const client = sanityClient.createClient({
+    projectId: 'e6mfe096',
+    dataset: 'production',
+    useCdn: true,
+    apiVersion: '2024-01-01',
+  });
+
+  async function loadSanityContent() {
+    try {
+      const services = await client.fetch('*[_type == "service"]');
+      const articles = await client.fetch('*[_type == "article"]');
+      console.log("Data Layanan dari Sanity:", services);
+      console.log("Data Artikel dari Sanity:", articles);
+    } catch (error) {
+      console.error("Gagal memuat Sanity:", error);
+    }
+  }
+
+  loadSanityContent();
+</script>
 </body>
 </html>
