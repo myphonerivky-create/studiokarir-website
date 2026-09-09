@@ -618,10 +618,11 @@
     fetchReviews();
   });
 </script>
-    <!-- Sanity Client CDN & Fetch Script -->
-<script src="https://cdn.jsdelivr.net/npm/@sanity/client@6.15.0/dist/index.umd.js"></script>
-<script>
-  const client = sanityClient.createClient({
+ <!-- Sanity Client Fetch Script (ESM) -->
+<script type="module">
+  import { createClient } from 'https://esm.sh/@sanity/client@6';
+
+  const client = createClient({
     projectId: 'e6mfe096',
     dataset: 'production',
     useCdn: true,
