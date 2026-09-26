@@ -50,39 +50,43 @@
 </head>
 <body class="bg-white text-slate-900 font-sans antialiased">
 
-  <!-- NAVBAR (Responsive Pill for Mobile & Desktop) -->
-    <header class="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 rounded-full px-3 md:px-5 py-2 shadow-2xl shadow-black/30">
+<!-- NAVBAR (Desktop Top Floating Pill & Mobile Bottom Floating Dock) -->
+    <header class="fixed z-50 transition-all duration-300
+                    bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-sm 
+                    md:top-6 md:bottom-auto md:max-w-2xl
+                    bg-slate-950/80 backdrop-blur-xl border border-slate-800 rounded-full px-4 py-3 shadow-2xl shadow-black/50">
+        
         <div class="flex items-center justify-between">
-            <!-- Logo (Tampil di semua ukuran layar, ukuran disesuaikan) -->
-            <a href="/" class="flex items-center">
-                <img src="logo1.png" alt="StudioKarir Logo" class="h-6 md:h-7 w-auto object-contain" />
+            <!-- Logo (Hanya tampil di Desktop) -->
+            <a href="/" class="hidden md:flex items-center">
+                <img src="logo1.png" alt="StudioKarir Logo" class="h-7 w-auto object-contain" />
             </a>
 
-            <!-- Menu Navigasi (Ikon + Teks ringkas agar muat di HP) -->
-            <nav class="flex items-center gap-1 md:gap-3 font-medium text-slate-300 text-xs">
-                <a href="#" class="flex items-center gap-1 px-2 md:px-3 py-1.5 rounded-full hover:bg-slate-800 hover:text-white transition">
-                    <i class="fas fa-home text-xs"></i> <span class="hidden sm:inline">Home</span>
+            <!-- Menu Navigasi / Dock -->
+            <nav class="flex items-center justify-between md:justify-center w-full md:w-auto gap-2 md:gap-3 font-medium text-slate-400 text-xs">
+                <a href="#" class="flex items-center gap-2 p-2.5 md:px-3 md:py-1.5 rounded-full hover:bg-slate-800/80 hover:text-white transition" title="Home">
+                    <i class="fas fa-home text-base md:text-xs"></i> <span class="hidden md:inline">Home</span>
                 </a>
-                <a href="#layanan" class="flex items-center gap-1 px-2 md:px-3 py-1.5 rounded-full hover:bg-slate-800 hover:text-white transition">
-                    <i class="fas fa-layer-group text-xs"></i> <span class="hidden sm:inline">Layanan</span>
+                <a href="#layanan" class="flex items-center gap-2 p-2.5 md:px-3 md:py-1.5 rounded-full hover:bg-slate-800/80 hover:text-white transition" title="Layanan">
+                    <i class="fas fa-layer-group text-base md:text-xs"></i> <span class="hidden md:inline">Layanan</span>
                 </a>
-                <a href="#hasil-kerja" class="flex items-center gap-1 px-2 md:px-3 py-1.5 rounded-full hover:bg-slate-800 hover:text-white transition">
-                    <i class="fas fa-briefcase text-xs"></i> <span class="hidden sm:inline">Karya</span>
+                <a href="#hasil-kerja" class="flex items-center gap-2 p-2.5 md:px-3 md:py-1.5 rounded-full hover:bg-slate-800/80 hover:text-white transition" title="Karya">
+                    <i class="fas fa-briefcase text-base md:text-xs"></i> <span class="hidden md:inline">Karya</span>
                 </a>
-                <a href="#penilaian" class="flex items-center gap-1 px-2 md:px-3 py-1.5 rounded-full hover:bg-slate-800 hover:text-white transition">
-                    <i class="fas fa-star text-xs"></i> <span class="hidden sm:inline">Penilaian</span>
+                <a href="#penilaian" class="flex items-center gap-2 p-2.5 md:px-3 md:py-1.5 rounded-full hover:bg-slate-800/80 hover:text-white transition" title="Penilaian">
+                    <i class="fas fa-star text-base md:text-xs"></i> <span class="hidden md:inline">Penilaian</span>
                 </a>
-                <a href="#faq" class="flex items-center gap-1 px-2 md:px-3 py-1.5 rounded-full hover:bg-slate-800 hover:text-white transition">
-                    <i class="fas fa-question-circle text-xs"></i> <span class="hidden sm:inline">FAQ</span>
+                <a href="#faq" class="flex items-center gap-2 p-2.5 md:px-3 md:py-1.5 rounded-full hover:bg-slate-800/80 hover:text-white transition" title="FAQ">
+                    <i class="fas fa-question-circle text-base md:text-xs"></i> <span class="hidden md:inline">FAQ</span>
                 </a>
             </nav>
 
-            <!-- Tombol Konsultasi (Hanya ikon di HP, teks lengkap di Desktop) -->
-            <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20ingin%20konsultasi%20gratis" target="_blank" class="bg-brand hover:bg-brand-dark text-white p-2 md:px-4 md:py-1.5 rounded-full text-xs font-semibold shadow-md shadow-brand/20 transition flex items-center gap-1.5" title="Konsultasi Gratis">
-                <i class="fas fa-comments md:hidden text-xs"></i>
-                <span class="hidden md:inline">Konsultasi</span> <i class="fas fa-arrow-right text-[10px] hidden md:inline"></i>
+            <!-- Tombol Konsultasi (Hanya tampil di Desktop) -->
+            <a href="https://wa.me/6285813567736?text=Halo%20StudioKarir,%20saya%20ingin%20konsultasi%20gratis" target="_blank" class="hidden md:flex bg-brand hover:bg-brand-dark text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-md shadow-brand/20 transition items-center gap-1.5">
+                <span>Konsultasi</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </a>
         </div>
+
     </header>
     <!-- HERO & LAYANAN UNGGULAN -->
    <main class="bg-grid min-h-screen pt-32 pb-16 px-6">
